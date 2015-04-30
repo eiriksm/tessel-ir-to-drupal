@@ -1,0 +1,23 @@
+{
+  "name": "tessel-ir-to-drupal",
+  "version": "1.0.0",
+  "description": "Turn off a Drupal site with a remote control",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eiriksm/tessel-ir-to-drupal.git"
+  },
+  "author": "Eirik S. Morland <eirik@morland.no>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eiriksm/tessel-ir-to-drupal/issues"
+  },
+  "homepage": "https://github.com/eiriksm/tessel-ir-to-drupal",
+  "dependencies": {
+    "ir-attx4": "^0.2.7",
+    "request": "^2.55.0"
+  }
+}
