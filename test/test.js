@@ -84,7 +84,7 @@ describe('Module functionality', function() {
         server.close();
         should(mockTessel.getLastWritten()).equal(undefined);
         should(ird.getState()).equal(undefined);
-        done();
+        done(err);
       }, 100);
     });
 
@@ -113,7 +113,7 @@ describe('Module functionality', function() {
         server.close();
         should(mockTessel.getLastWritten()).equal(true);
         should(ird.getState()).equal(undefined);
-        done();
+        done(err);
       }, 100);
     });
 
@@ -141,7 +141,7 @@ describe('Module functionality', function() {
         server.close();
         should(mockTessel.getLastWritten()).equal(false);
         should(ird.getState()).equal(undefined);
-        done();
+        done(err);
       // Let this one toggle the led back off, to increase coverage.
       }, 800);
     });
@@ -174,7 +174,7 @@ describe('Module functionality', function() {
       setTimeout(function() {
         server.close();
         ird.getState().should.equal(1);
-        done();
+        done(err);
       }, 300);
     });
 
