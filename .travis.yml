@@ -6,6 +6,7 @@ node_js:
 sudo: false
 
 after_script:
+  - make test-cov
   - codeclimate < coverage/lcov.info
 addons:
   code_climate:
