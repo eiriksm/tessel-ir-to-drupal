@@ -6,7 +6,7 @@ node_js:
 sudo: false
 
 after_script:
-  - codeclimate < lcov.info
+  - codeclimate < coverage/lcov.info
 addons:
   code_climate:
     repo_token:
