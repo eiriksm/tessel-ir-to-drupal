@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - "0.12"
+  - "0.10"
+  - "io.js"
+sudo: false
+
+after_script:
+  - codeclimate < lcov.info
+addons:
+  code_climate:
+    repo_token:
+      secure: n14HqlEdqhC0BjNYOEXZM2FkbspT8Vl/GL0y9XQWHScCBRoYbMrWrd65CHjYkK9TTRK4wkRS0hUN51oWj1d8W+IwY1AMYmSdk3q29GboEZG6l62jrWLiCnqI9iZpQtPTAvjH6BJygnXxyZ9qjCfYS+OfWAAj/AXENMsUR4jRhcc= 
