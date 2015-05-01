@@ -2,9 +2,13 @@
 var request = require('request');
 
 module.exports = function(config, callback) {
+  if (!config) {
+    throw new Error('Please supply configuration for this module.');
+  }
   var infrared = config.infrared;
   var tessel = config.tessel;
   var offbutton = config.offButton;
+  var state;
   if (!config.url) {
     throw new Error('Please specify a URL in your config.json file.');
   }
@@ -19,10 +23,18 @@ module.exports = function(config, callback) {
   };
   opts.json = true;
 
+  // Object to return to callback, so the outside function can monitor the
+  // state of the site.
+  var ird = {
+    getState: function() {
+      return state;
+    }
+  };
+
   // Event listener for when the IR is ready.
   infrared.on('ready', function() {
     // Tell the implementer that stuff is ready.
-    callback();
+    callback(null, ird);
   });
 
   // Error listener.
@@ -75,7 +87,8 @@ module.exports = function(config, callback) {
             console.log('The site was not turned off successfully. Make sure you have the correct URL and session cookie set');
             return;
           }
-          console.log('Maintenance mode toggled sucessfully. Current state: Maintenance mode is ', (body.state ? 'ON' : 'OFF'));
+          state = body.state;
+          console.log('Maintenance mode toggled sucessfully. Current state: Maintenance mode is', (body.state ? 'ON' : 'OFF'));
         });
       }
       else {
