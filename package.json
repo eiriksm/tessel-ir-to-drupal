@@ -12,7 +12,7 @@
     "url": "https://github.com/eiriksm/tessel-ir-to-drupal.git"
   },
   "author": "Eirik S. Morland <eirik@morland.no>",
-  "license": "ISC",
+  "license": "WTFPL",
   "bugs": {
     "url": "https://github.com/eiriksm/tessel-ir-to-drupal/issues"
   },
