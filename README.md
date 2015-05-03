@@ -31,14 +31,15 @@ var tessel = require('tessel');
 var infraredlib = require('ir-attx4');
 var infrared = infraredlib.use(tessel.port.B);
 
-var ird = require('tessel-ir-to-drupal');
 var config = {
   url: 'http://example.com',
   session: 'SESS51337Tr0lloll110l00l1=acbdef123abc1337H4XX',
   offButton: [ 91, -88, 13, -32, 12, -33, 12, -32, 13, -10, 12, -10, 13, -9, 13, -10, 12, -10, 12, -32, 14, -31, 13, -32, 13, -9, 13, -10, 12, -10, 12, -10, 13, -9, 13, -10, 12, -32, 13, -10, 12, -10, 13, -9, 13, -10, 13, -9, 13, -9, 13, -32, 13, -9, 13, -32, 12, -32, 13, -32, 12, -33, 12, -32, 13, -32, 12 ],
   tessel: tessel,
   infrared: infrared
-}
+};
+
+var ird = require('tessel-ir-to-drupal');
 ird(config, function(err, state) {
   if (err) {
     throw err;
@@ -48,7 +49,7 @@ ird(config, function(err, state) {
   // would use this differently in your application.
   setTimeout(function() {
     console.log('Current state is', state.getState());
-  }, 60000)
+  }, 60000);
 });
 ```
 
