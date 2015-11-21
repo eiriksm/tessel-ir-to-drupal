@@ -2,7 +2,7 @@
   "name": "tessel-ir-to-drupal",
   "version": "1.0.0",
   "description": "Turn off a Drupal site with a remote control",
-  "main": "index.js",
+  "main": "start.js",
   "scripts": {
     "test": "npm run lint && mocha",
     "lint": "eslint . && echo 'Lint passed'"
