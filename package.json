@@ -19,7 +19,7 @@
   "homepage": "https://github.com/eiriksm/tessel-ir-to-drupal",
   "dependencies": {
     "ir-attx4": "^0.2.7",
-    "request": "^2.55.0"
+    "request": "^2.73.0"
   },
   "devDependencies": {
     "codeclimate-test-reporter": "0.3.3",
